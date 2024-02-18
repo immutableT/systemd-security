@@ -1,0 +1,20 @@
+[Unit]
+Description=Demo Service Using DynamicUser with Systemd-Managed Directories
+
+[Service]
+ExecStart=/usr/local/bin/demo-dynamic-user.sh
+DynamicUser=yes
+# Declare systemd-managed directories
+CacheDirectory=demo-dynamic-user
+LogsDirectory=demo-dynamic-user
+RuntimeDirectory=demo-dynamic-user
+ConfigurationDirectory=demo-dynamic-user
+# Apply sandboxing features for demonstration
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+NoNewPrivileges=yes
+RestrictAddressFamilies=AF_UNIX # Limit network access
+
+[Install]
+WantedBy=multi-user.target
