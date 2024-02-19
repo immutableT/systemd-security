@@ -8,6 +8,11 @@ cp demo-dynamic-user-attacker.service /etc/systemd/system/demo-dynamic-user-atta
 cp demo-dynamic-user-attacker.sh /usr/local/bin
 chmod +x /usr/local/bin/demo-dynamic-user-attacker.sh
 
+mkdir /var/shared
+chmod 777 /var/shared
+mkdir /var/test
+chmod 777 /var/test
+
 systemctl daemon-reload
 systemctl stop demo-dynamic-user.service
 systemctl start demo-dynamic-user.service

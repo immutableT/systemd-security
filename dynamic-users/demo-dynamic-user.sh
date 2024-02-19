@@ -13,5 +13,8 @@ findmnt --target /usr
 
 touch "${CACHE_DIRECTORY}/secret.txt"
 
+touch /var/shared/hello.txt
+touch /var/test/hello.txt
+
 
 

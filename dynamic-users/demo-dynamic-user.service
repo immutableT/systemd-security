@@ -13,5 +13,7 @@ CacheDirectory=demo-dynamic-user
 ConfigurationDirectory=demo-dynamic-user
 StateDirectory=demo-dynamic-user
 
+ReadWritePaths=/var/shared
+
 [Install]
 WantedBy=multi-user.target
