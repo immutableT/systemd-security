@@ -6,11 +6,12 @@ stat "${RUNTIME_DIRECTORY}"
 
 stat "${CACHE_DIRECTORY}"
 stat "${CONFIGURATION_DIRECTORY}"
+stat "${STATE_DIRECTORY}"
 
 echo "Mount info for /usr:"
 findmnt --target /usr
 
-echo "Attempting to execute /usr/bin/ls:"
-/usr/bin/ping -c 1 www.google.com
+touch "${CACHE_DIRECTORY}/secret.txt"
+
 
 

@@ -1,0 +1,17 @@
+[Unit]
+Description=Demo Service Using DynamicUser with Systemd-Managed Directories.
+
+[Service]
+ExecStart=/usr/local/bin/demo-dynamic-user-attacker.sh
+DynamicUser=yes
+
+# Ephemeral
+RuntimeDirectory=demo-dynamic-user-attacker
+
+# Persistent
+CacheDirectory=demo-dynamic-user-attacker
+ConfigurationDirectory=demo-dynamic-user-attacker
+StateDirectory=demo-dynamic-user-attacker
+
+[Install]
+WantedBy=multi-user.target
